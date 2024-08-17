@@ -1,0 +1,4 @@
+{
+    "https://animeyuzu.com/*":"/ads-handle/animeyuzu.js",
+    "https://chatgpt.com/*":"/ads-handle/chatgpt.js"
+}

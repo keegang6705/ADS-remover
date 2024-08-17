@@ -1,11 +1,11 @@
 {
   "name": "ADS remover",
-  "version": "1.2",
-  "version_name": "2024.8.17-1-chrome",
+  "version": "1.0",
+  "version_name": "0000.0.00-0-chrome",
   "description": "",
   "manifest_version": 3,
   "permissions": ["activeTab", "tabs", "storage", "scripting"],
-  "host_permissions": ["https://animeyuzu.com/*","https://chatgpt.com/*"],
+  "host_permissions": ["https://*"],
   "icons": {
     "128": "/image/col_studio.png"
   },
@@ -15,12 +15,11 @@
   },
   "content_scripts": [
     {
-      "js": ["ads-handle/animeyuzu.js"],
-      "matches": ["https://animeyuzu.com/*"]
-    },
-    {
-      "js": ["ads-handle/chatgpt.js"],
-      "matches": ["https://chatgpt.com/*"]
+      "js": ["scripts/content.js"],
+      "matches": ["https://*"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "/scripts/background.js"
+  }
 }
