@@ -5,7 +5,7 @@
   "description": "",
   "manifest_version": 3,
   "permissions": ["activeTab", "tabs", "storage", "scripting"],
-  "host_permissions": ["https://animeyuzu.com/*"],
+  "host_permissions": ["https://animeyuzu.com/*","https://chatgpt.com/*"],
   "icons": {
     "128": "/image/col_studio.png"
   },
