@@ -1,4 +1,12 @@
 {
-    "https://animeyuzu.com/*":"/ads-handle/animeyuzu.js",
-    "https://chatgpt.com/*":"/ads-handle/chatgpt.js"
-}
+    "https://animeyuzu.com/*": {
+      "path": "/ads-handle/animeyuzu.js"
+    },
+    "https://chatgpt.com/*": {
+      "path": "/ads-handle/chatgpt.js"
+    },
+    "https://manga-post.com/*": {
+      "path": "/ads-handle/manga-post.js"
+    }
+  }
+  

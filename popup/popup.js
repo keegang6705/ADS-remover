@@ -5,6 +5,7 @@ const donate_btn = document.getElementById("btn-donate");
 const settings_btn = document.getElementById("btn-settings");
 const settings_container = document.getElementById("settings-container");
 const reset_btn = document.getElementById("btn-reset");
+const toggle_script_btn = document.getElementById("btn-toggle-script");
 var settingCheckboxes = document.querySelectorAll('input[type="checkbox"][id$="-state"]');
 
 reset_btn.addEventListener("click", function () {
@@ -24,6 +25,17 @@ donate_btn.addEventListener("click", function () {
         url: 'https://keegang.000.pe/menu/donate'
     });
 });
+
+toggle_script_btn.addEventListener("click", function () {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var activeTab = tabs[0];
+        chrome.runtime.sendMessage({ message: "toggleActiveState" ,url:activeTab.url ,tabId:activeTab.id }, function(response) {
+            console.log("Response from service worker:", response);
+        });
+    });
+});
+
+
 
 function loadSettings() {
     chrome.storage.sync.get("settings", function(result) {

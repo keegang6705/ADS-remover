@@ -30,7 +30,7 @@ function createOverlay(textx) {
       chrome.tabs.create({ url: '' });
     });
     const button = document.createElement('a');
-    button.textContent = 'แจ้งปัญหา';
+    button.textContent = 'report problem';
     button.style.cssText = `
       position: absolute;
       top: 78%;
@@ -83,39 +83,39 @@ function updateButton(){
 }
 
 async function check(){
-    try {
-      const response = await fetch('/manifest.json');
-      const localManifest = await response.json();
-      const LocalVersion = parseInt((localManifest.version)[0]);
+  try {
+    const response = await fetch('/manifest.json');
+    const localManifest = await response.json();
+    const LocalVersion = parseInt((localManifest.version)[0]);
 
-      const remoteResponse = await fetch('https://raw.githubusercontent.com/keegang6705/ADSRM/master/manifest.json');
-      const remoteManifest = await remoteResponse.json();
-      const remoteVersion = parseInt((remoteManifest.version)[0]);
-      if (LocalVersion<remoteVersion) {
-        createOverlay("การอัพเดทที่จำเป็น โปรดอัพเดทเป็นเวอร์ชั่นล่าสุด");
-      } else {
-        if(parseFloat(localManifest.version)<parseFloat(remoteManifest.version)){
-          updateButton();
-        }
-      }
-      document.getElementById("container").textContent = "เวอร์ชั่นปัจจุบัน:"+localManifest.version+" เวอร์ชั่นล่าสุด:"+remoteManifest.version;
-    } catch (error) {
-        alert('รับข้อมูลเวอร์ชั่นผิดพลาด \nโปรดเช็คอินเทอร์เน็ตของท่าน\n'+ error);
-        alert("การใช้งานโดยไม่ตรวจสอบเวอร์ชั่นอาจสร้างความผิดพลาดได้")
-      }
-  }
-  chrome.storage.sync.get("settings", function(result) {
-    let versionCheckEnabled = true;
-    if (chrome.runtime.lastError) {
-      console.error('Error loading settings:', chrome.runtime.lastError);
+    const remoteResponse = await fetch('https://raw.githubusercontent.com/keegang6705/ADS-remover/master/manifest.json');
+    const remoteManifest = await remoteResponse.json();
+    const remoteVersion = parseInt((remoteManifest.version)[0]);
+    if (LocalVersion<remoteVersion) {
+      createOverlay("important update please update extension");
     } else {
-      const settings = result.settings || {};
-      if (Object.keys(settings).length > 0) {
-        versionCheckEnabled = settings["setting2-state"] ?? true;
+      if(parseFloat(localManifest.version)<parseFloat(remoteManifest.version)){
+        updateButton();
       }
     }
-    if (versionCheckEnabled) {
-      check();
+    document.getElementById("container").textContent = "current:"+localManifest.version+" lastest:"+remoteManifest.version;
+  } catch (error) {
+      alert('error reciving version \nplease check your internet connection\n'+ error);
+      alert("use without checking version may cause critical error")
     }
-  });
-  
+}
+chrome.storage.sync.get("settings", function(result) {
+  let versionCheckEnabled = true;
+  if (chrome.runtime.lastError) {
+    console.error('Error loading settings:', chrome.runtime.lastError);
+  } else {
+    const settings = result.settings || {};
+    if (Object.keys(settings).length > 0) {
+      versionCheckEnabled = settings["setting2-state"] ?? true;
+    }
+  }
+  if (versionCheckEnabled) {
+    check();
+  }
+});
+

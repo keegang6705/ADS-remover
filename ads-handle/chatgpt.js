@@ -7,3 +7,12 @@ try {
   console.log(e);
 } finally{
 }
+try {
+  document
+    .querySelectorAll(".light:bg-token-main-surface-secondary")
+    .forEach((element) => element.remove());
+} catch (e) {
+  console.log(e);
+} finally{
+}
+

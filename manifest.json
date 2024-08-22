@@ -1,11 +1,11 @@
 {
   "name": "ADS remover",
-  "version": "1.0",
-  "version_name": "0000.0.00-0-chrome",
+  "version": "2.1",
+  "version_name": "2024.8.22-1-chrome",
   "description": "",
   "manifest_version": 3,
   "permissions": ["activeTab", "tabs", "storage", "scripting"],
-  "host_permissions": ["https://*"],
+  "host_permissions": ["<all_urls>"],
   "icons": {
     "128": "/image/col_studio.png"
   },
@@ -13,12 +13,6 @@
     "default_popup": "/popup/popup.html",
     "default_icon": "/image/col_studio.png"
   },
-  "content_scripts": [
-    {
-      "js": ["scripts/content.js"],
-      "matches": ["https://*"]
-    }
-  ],
   "background": {
     "service_worker": "/scripts/background.js"
   }
