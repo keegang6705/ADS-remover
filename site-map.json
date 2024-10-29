@@ -1,12 +1,19 @@
 {
     "https://animeyuzu.com/*": {
-      "path": "/ads-handle/animeyuzu.js"
+      "path": "/ads-handle/animeyuzu.js",
+      "active":true
     },
     "https://chatgpt.com/*": {
-      "path": "/ads-handle/chatgpt.js"
+      "path": "/ads-handle/chatgpt.js",
+      "active":true
     },
     "https://manga-post.com/*": {
-      "path": "/ads-handle/manga-post.js"
+      "path": "/ads-handle/manga-post.js",
+      "active":true
+    },
+    "https://www.mangakimi.com/*": {
+      "path": "/ads-handle/mangakimi.js",
+      "active":true
     }
   }
   

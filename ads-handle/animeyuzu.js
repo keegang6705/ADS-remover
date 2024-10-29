@@ -5,5 +5,4 @@ try {
     .forEach((element) => element.remove());
 } catch (e) {
   console.log(e);
-} finally{
 }

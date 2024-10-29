@@ -1,7 +1,7 @@
 {
   "name": "ADS remover",
-  "version": "2.1",
-  "version_name": "2024.8.22-1-chrome",
+  "version": "2.2",
+  "version_name": "2024.9.5-1-chrome",
   "description": "",
   "manifest_version": 3,
   "permissions": ["activeTab", "tabs", "storage", "scripting"],
