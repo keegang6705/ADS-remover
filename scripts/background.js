@@ -67,19 +67,27 @@ loadSiteMap();
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     chrome.storage.sync.get("settings", function(result) {
         let ADSRM_enable = true;
+        let useCommonForUnsupported = false;
+        
         if (chrome.runtime.lastError) {
             console.log('Error loading setting:', result.settings, chrome.runtime.lastError);
             ADSRM_enable = true;
         }
+        
         let settingValue = result.settings;
         if (JSON.stringify(settingValue) === "{}"){
             ADSRM_enable = true;
+            useCommonForUnsupported = false;
+        } else {
+            try {
+                ADSRM_enable = settingValue["setting2-state"];
+                useCommonForUnsupported = settingValue["setting3-state"];
+            } catch {
+                ADSRM_enable = true;
+                useCommonForUnsupported = false;
+            }
         }
-        try {
-            ADSRM_enable = settingValue["setting2-state"];
-        } catch {
-            ADSRM_enable = true;
-        }
+        
         if (ADSRM_enable && changeInfo.status === "loading") {
             chrome.storage.local.get("siteMap", function(result) {
                 let siteMapData = result.siteMap || {};
@@ -87,10 +95,12 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                 let fallbackScript = siteMapData["fall-back"] || "/ads-handle/common.js";
 
                 let scriptExecuted = false;
+                let siteMatched = false;
                 
                 // Check for specific site matches first
                 for (const urlPattern in sites) {
                     if (new RegExp(urlPattern.replace(/\*/g, '.*')).test(tab.url)) {
+                        siteMatched = true;
                         const scriptPath = sites[urlPattern].path;
                         const activeState = sites[urlPattern].active;
 
@@ -109,6 +119,16 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                         }
                         break;
                     }
+                }
+                
+                // If no site matched and user enabled common.js for unsupported sites
+                if (!siteMatched && useCommonForUnsupported && fallbackScript) {
+                    chrome.scripting.executeScript({
+                        target: { tabId: tabId },
+                        files: [fallbackScript]
+                    });
+                    console.log(`Injected fallback script: ${fallbackScript} into unsupported site ${tab.url}`);
+                    scriptExecuted = true;
                 }
             });
         }

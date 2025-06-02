@@ -4,19 +4,20 @@ const send_email_btn = document.getElementById("btn-send-email");
 const donate_btn = document.getElementById("btn-donate");
 const settings_btn = document.getElementById("btn-settings");
 const settings_container = document.getElementById("settings-container");
-const reset_btn = document.getElementById("btn-reset");
+//const reset_btn = document.getElementById("btn-reset");
 const toggle_script_btn = document.getElementById("btn-toggle-script");
+const download_sitemap_btn = document.getElementById("btn-download-sitemap");
 var settingCheckboxes = document.querySelectorAll('input[type="checkbox"][id$="-state"]');
 
 // Store current tab info
 let currentTab = null;
 let currentSiteActive = null;
 
-reset_btn.addEventListener("click", function () {
+/*reset_btn.addEventListener("click", function () {
     chrome.storage.sync.clear(function() {
         console.log("Settings cleared");
     });
-});
+});*/
 
 send_email_btn.addEventListener("click", function () {
     chrome.tabs.create({
@@ -27,6 +28,35 @@ send_email_btn.addEventListener("click", function () {
 donate_btn.addEventListener("click", function () {
     chrome.tabs.create({
         url: 'https://keegang.cc/donate'
+    });
+});
+
+download_sitemap_btn.addEventListener("click", function () {
+    chrome.storage.local.get("siteMap", function(result) {
+        let siteMapData = result.siteMap || {};
+        
+        if (Object.keys(siteMapData).length === 0) {
+            alert("No site-map data found!");
+            return;
+        }
+        
+        // Create downloadable JSON file
+        const dataStr = JSON.stringify(siteMapData, null, 2);
+        const dataBlob = new Blob([dataStr], {type: 'application/json'});
+        const url = URL.createObjectURL(dataBlob);
+        
+        // Create temporary download link
+        const downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = 'site-map.json';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        
+        // Clean up
+        URL.revokeObjectURL(url);
+        
+        console.log("Site-map downloaded successfully");
     });
 });
 
@@ -80,26 +110,38 @@ function updateToggleButtonState() {
             }
         }
         
-        if (isSupported) {
+if (isSupported) {
+    toggle_script_btn.disabled = false;
+    if (currentSiteActive !== false) {
+        toggle_script_btn.textContent = "🟢 Script Active (Click to Disable)";
+        toggle_script_btn.className = "btn-active";
+        toggle_script_btn.style.borderColor = "#4CAF50";
+        toggle_script_btn.style.color = "white";
+    } else {
+        toggle_script_btn.textContent = "🔴 Script Inactive (Click to Enable)";
+        toggle_script_btn.className = "btn-inactive";
+        toggle_script_btn.style.borderColor = "#f44336";
+        toggle_script_btn.style.color = "white";
+    }
+} else {
+    chrome.storage.sync.get("settings", function (result) {
+        const settings = result.settings || {};
+        if (settings["setting3-state"] === true) {
+            toggle_script_btn.textContent = "🟡 Using common.js";
+            toggle_script_btn.className = "btn-warning";
+            toggle_script_btn.style.borderColor = "#ffd700";
+            toggle_script_btn.style.color = "#fff";
             toggle_script_btn.disabled = false;
-            if (currentSiteActive !== false) {
-                toggle_script_btn.textContent = "🟢 Script Active (Click to Disable)";
-                toggle_script_btn.className = "btn-active";
-                toggle_script_btn.style.borderColor = "#4CAF50";
-                toggle_script_btn.style.color = "white";
-            } else {
-                toggle_script_btn.textContent = "🔴 Script Inactive (Click to Enable)";
-                toggle_script_btn.className = "btn-inactive";
-                toggle_script_btn.style.borderColor = "#f44336";
-                toggle_script_btn.style.color = "white";
-            }
         } else {
             toggle_script_btn.textContent = "❌ Site Not Supported";
             toggle_script_btn.className = "btn-unsupported";
-            toggle_script_btn.style.backgroundColor = "#9E9E9E";
+            toggle_script_btn.style.borderColor = "#f44336";
             toggle_script_btn.style.color = "white";
             toggle_script_btn.disabled = true;
         }
+    });
+}
+
     });
 }
 
@@ -149,6 +191,7 @@ for (var i = 0; i < settingCheckboxes.length; i++) {
     checkbox.addEventListener('change', function() {
         console.log("ADSRM/popup/popup.js:SETTING CHANGED");
         saveSettings();
+        updateToggleButtonState();
     });
 }
 

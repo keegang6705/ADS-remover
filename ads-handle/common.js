@@ -1,4 +1,4 @@
-console.log("ADSRM/scripts/common.js: LOADED");
+console.log("ADSRM/ads-handle/common.js: LOADED");
 
 try {
   document.querySelectorAll("a[href*='slot'], a[href*='panama'], a[href*='casino'], a[href*='888'], a[href*='666']").forEach((a) => {

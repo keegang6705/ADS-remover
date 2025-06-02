@@ -1,4 +1,4 @@
-console.log("ADSRM/scripts/mangakimi.js: LOADED");
+console.log("ADSRM/ads-handle/mangakimi.js: LOADED");
 try {
   document
     .querySelectorAll(".header-ads-section")

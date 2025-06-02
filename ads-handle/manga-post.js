@@ -1,4 +1,4 @@
-console.log("ADSRM/scripts/manga-post.js: LOADED");
+console.log("ADSRM/ads-handle/manga-post.js: LOADED");
 try {
   document
     .getElementById("FloatingLayer508").remove();

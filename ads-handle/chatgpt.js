@@ -1,4 +1,4 @@
-console.log("ADSRM/scripts/chatgpt.js: LOADED");
+console.log("ADSRM/ads-handle/chatgpt.js: LOADED");
 try {
   document
     .querySelectorAll(".absolute.bottom-full")
