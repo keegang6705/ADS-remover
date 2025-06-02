@@ -1,6 +1,9 @@
 {
-    "https://animeyuzu.com/*": {
-      "path": "/ads-handle/animeyuzu.js",
+  "version": 1,
+  "fall-back":"/ads-handle/common.js",
+  "sites": {
+    "https://www.anime-yuzu.com/*": {
+      "path": "",
       "active":true
     },
     "https://chatgpt.com/*": {
@@ -14,6 +17,11 @@
     "https://www.mangakimi.com/*": {
       "path": "/ads-handle/mangakimi.js",
       "active":true
+    },
+    "https://www.anime-sugoi.com/*": {
+      "path": "",
+      "active":true
     }
+  }
   }
   
