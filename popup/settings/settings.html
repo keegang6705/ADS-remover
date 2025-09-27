@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ADSRM Settings</title>
+    <link rel="stylesheet" href="./settings.css">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body class="scroll" style="width: 300px; height: 300px; color: #fff; background-color: #333; border-radius: 30px; font-family: prompt;">
+    <div class="settings-container">
+        <h3 style="text-align: center; margin: 15px 0;">Settings</h3>
+        
+        <div class="setting">
+            <span>Enable Auto Update</span>
+            <label class="switch float-right">
+                <input type="checkbox" id="setting1-state">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="setting">
+            <span>Enable Background Service</span>
+            <label class="switch float-right">
+                <input type="checkbox" id="setting2-state">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="setting">
+            <span>Enable Common Script</span>
+            <label class="switch float-right">
+                <input type="checkbox" id="setting3-state">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="setting">
+            <span>Enable Debug Mode</span>
+            <label class="switch float-right">
+                <input type="checkbox" id="setting4-state">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <button class="button" id="btn-back" style="margin-top: 20px;">Back to Popup</button>
+    </div>
+    <script src="settings.js"></script>
+</body>
+</html>

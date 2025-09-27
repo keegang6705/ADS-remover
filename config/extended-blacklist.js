@@ -1,0 +1,21 @@
+[
+    "https://raw.githubusercontent.com/keegang6705/GET/refs/heads/main/BrowserExtension/ADSRM/blacklisted",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/adblock/AdguardDNS",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/adblock/frellwits-swedish-hosts-file",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/adblock/oisd-small",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/adult/oisd-nsfw",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/gambling/hagezi-gambling",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/gambling/hagezi-gambling-onlydomains",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/firebog-easylist-privacy",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-amazon",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-apple",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-huawei",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-oppo",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-tiktok-aggressive",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-vivo",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-webos",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-windows",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-xiamomi",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/mullvad-tracker-blocklist",
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/social/mullvad-social-blocklist"
+]
