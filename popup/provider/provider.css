@@ -1,0 +1,64 @@
+/* Container */
+#provider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Category Section */
+.category-section {
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #454545;
+}
+
+/* Category Header */
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Provider Item */
+.provider-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    margin-bottom: 4px;
+}
+
+.provider-item:hover {
+    background-color: #757575;
+}
+
+/* Provider Name */
+.provider-name {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Scrollbar for container */
+#provider-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#provider-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+#provider-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}

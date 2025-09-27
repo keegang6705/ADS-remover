@@ -5,11 +5,14 @@ const donate_btn = document.getElementById("btn-donate");
 const settings_btn = document.getElementById("btn-settings");
 const toggle_script_btn = document.getElementById("btn-toggle-script");
 const download_sitemap_btn = document.getElementById("btn-download-sitemap");
+const providers_btn = document.getElementById("btn-providers");
 
 let currentTab = null;
 let currentSiteActive = null;
 
-
+providers_btn.addEventListener("click", function() {
+    window.location.href = "./provider/provider.html";
+});
 
 send_email_btn.addEventListener("click", function () {
     chrome.tabs.create({

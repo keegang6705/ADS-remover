@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-09-27",
+    "categories": [
+      "custom",
+      "adblock",
+      "adult",
+      "gambling",
+      "privacy",
+      "social"
+    ]
+  },
+  "blacklists": [
+    {
+      "url": "https://raw.githubusercontent.com/keegang6705/GET/refs/heads/main/BrowserExtension/ADSRM/blacklisted",
+      "active": true,
+      "category": "custom"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/adblock/AdguardDNS",
+      "active": false,
+      "category": "adblock"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/adblock/frellwits-swedish-hosts-file",
+      "active": false,
+      "category": "adblock"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/adblock/oisd-small",
+      "active": false,
+      "category": "adblock"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/adult/oisd-nsfw",
+      "active": false,
+      "category": "adult"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/gambling/hagezi-gambling",
+      "active": false,
+      "category": "gambling"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/gambling/hagezi-gambling-onlydomains",
+      "active": false,
+      "category": "gambling"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/firebog-easylist-privacy",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-amazon",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-apple",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-huawei",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-oppo",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-tiktok-aggressive",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-vivo",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-webos",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-windows",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/hagezi-tracker-xiamomi",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/privacy/mullvad-tracker-blocklist",
+      "active": false,
+      "category": "privacy"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/lists/doh/social/mullvad-social-blocklist",
+      "active": false,
+      "category": "social"
+    }
+  ]
+}

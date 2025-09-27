@@ -14,10 +14,6 @@
       "path": "/ads-handle/manga-post.js",
       "active":true
     },
-    "https://www.mangakimi.com/*": {
-      "path": "/ads-handle/mangakimi.js",
-      "active":true
-    },
     "https://www.anime-sugoi.com/*": {
       "path": "",
       "active":true
